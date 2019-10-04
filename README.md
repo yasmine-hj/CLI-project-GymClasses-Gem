@@ -1,6 +1,6 @@
 # GymClasses
 
-Welcome to the GymClasses gem! This gem will show you a list of classes available at Nuffield Health Fitness & Wellbeing Gyms as per their website. You can then select a class to find out more details of the class and its benefits.
+Welcome to the GymClasses gem! This gem will show you a list of classes available at Nuffield Health Fitness & Wellbeing Gyms as per their website. You can then select a class to find out more details about the class and its benefits.
 
 ## Installation
 
