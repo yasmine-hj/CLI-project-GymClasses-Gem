@@ -1,0 +1,7 @@
+require_relative "../lib/CLI.rb"
+require_relative "../lib/Gym_Classes.rb"
+require_relative "../lib/scraper.rb"
+
+CLI.new.run
+
+

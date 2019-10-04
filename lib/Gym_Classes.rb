@@ -1,6 +1,15 @@
-require "Gym_Classes/version"
+class Gym_Classes
 
-module GymClasses
-  class Error < StandardError; end
-  # Your code goes here...
+  attr_accessor :title, :url, :details
+    @@all = []
+  def initialize(title, url)
+    @title = title
+    @url = url
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+
 end
