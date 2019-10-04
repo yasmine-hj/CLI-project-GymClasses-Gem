@@ -28,14 +28,19 @@ class CLI
             puts "Class not found. Please select another class!"
             menu
             puts " "
+
         else
             Scraper.scrape_individual_gymclass(gymclass)
             puts " "
             puts "Here are some details about your #{gymclass.title} class!"
             puts " "
             puts "#{gymclass.details}"
+            
         end
+        more_info
+    end    
 
+    def more_info
         puts " "
         puts "Would you like to some information on another gym class?"
         puts " " 
@@ -55,12 +60,13 @@ class CLI
             puts "Have a great day :)"
             puts " "
             exit
+
         else
             puts " "
             puts "I don't understand that answer."
-            run
+            more_info
         end
-        
+
     end
 
 end
