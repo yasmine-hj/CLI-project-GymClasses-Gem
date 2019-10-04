@@ -21,11 +21,14 @@ class CLI
     def menu
         puts " "
         puts "Please select a class to see class details."
+        puts " "
         input = gets.chomp
         gymclass = Gym_Classes.all[input.to_i-1]
 
         if !gymclass
+            puts " "
             puts "Class not found. Please select another class!"
+            puts " "
             menu
             puts " "
 
@@ -35,7 +38,6 @@ class CLI
             puts "Here are some details about your #{gymclass.title} class!"
             puts " "
             puts "#{gymclass.details}"
-            
         end
         more_info
     end    
@@ -51,6 +53,9 @@ class CLI
         
         if input == "y"
             puts " "
+            Gym_Classes.all.each.with_index(1) do |gymclass, i|
+                puts "#{i}"   ". " "#{gymclass.title}"
+            end
             menu
 
         elsif input == "n"
@@ -66,9 +71,7 @@ class CLI
             puts "I don't understand that answer."
             more_info
         end
-
     end
-
 end
 
 
