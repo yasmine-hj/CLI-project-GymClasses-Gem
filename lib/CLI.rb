@@ -20,7 +20,7 @@ class CLI
 
     def menu
         puts " "
-        puts "Please select a class to see booking details."
+        puts "Please select a class to see class details."
         input = gets.chomp
         gymclass = Gym_Classes.all[input.to_i-1]
 
@@ -35,6 +35,32 @@ class CLI
             puts " "
             puts "#{gymclass.details}"
         end
+
+        puts " "
+        puts "Would you like to some information on another gym class?"
+        puts " " 
+        puts "Enter Y or N"
+        puts " "
+
+        input = gets.chomp.downcase
+        
+        if input == "y"
+            puts " "
+            menu
+
+        elsif input == "n"
+            puts " "
+            puts "Thank you for using the gym classes database!"
+            puts " "
+            puts "Have a great day :)"
+            puts " "
+            exit
+        else
+            puts " "
+            puts "I don't understand that answer."
+            run
+        end
+        
     end
 
 end
