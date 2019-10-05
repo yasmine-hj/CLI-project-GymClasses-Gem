@@ -25,14 +25,14 @@ class CLI
 
     def menu
         puts " "
-        puts "Please select a class to see class details."
+        puts "Please select a class to see class details.".green
         puts " "
         input = gets.chomp
         gymclass = Gym_Classes.all[input.to_i-1]
 
         if !gymclass
             puts " "
-            puts "Class not found. Please select another class!"
+            puts "Class not found. Please select another class!".red
             puts " "
             menu
             puts " "
@@ -49,9 +49,9 @@ class CLI
 
     def more_info
         puts " "
-        puts "Would you like to some information on another gym class?"
+        puts "Would you like to some information on another gym class?".green
         puts " " 
-        puts "Enter Y or N"
+        puts "Enter Y or N".blue
         puts " "
 
         input = gets.chomp.downcase
@@ -65,7 +65,7 @@ class CLI
 
         elsif input == "n"
             puts " "
-            puts "Thank you for using the gym classes database!"
+            puts "Thank you for using the gym classes database!".green
             puts "_________________________________________________".blue
             puts " "
             puts "                Have a great day!".yellow
@@ -75,7 +75,7 @@ class CLI
 
         else
             puts " "
-            puts "I don't understand that answer."
+            puts "I don't understand that answer.".red
             more_info
         end
     end
