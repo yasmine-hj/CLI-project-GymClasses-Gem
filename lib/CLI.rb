@@ -1,12 +1,17 @@
 
 require "pry"
+require 'colorize'
+
 
 class CLI
 
     def run
         classes = []
         puts " "
-        puts "Welcome to your gym classes database!"
+        puts "_________________________________________________".blue
+        puts " "
+        puts "      Welcome to your gym classes database!".yellow
+        puts "_________________________________________________".blue
         puts " "
         puts "Which class would you like to learn more about?"
         puts " "
@@ -35,9 +40,9 @@ class CLI
         else
             Scraper.scrape_individual_gymclass(gymclass)
             puts " "
-            puts "Here are some details about your #{gymclass.title} class!"
+            puts "Here are some details about your #{gymclass.title} class!".green
             puts " "
-            puts "#{gymclass.details}"
+            puts "#{gymclass.details}".yellow
         end
         more_info
     end    
@@ -61,8 +66,10 @@ class CLI
         elsif input == "n"
             puts " "
             puts "Thank you for using the gym classes database!"
+            puts "_________________________________________________".blue
             puts " "
-            puts "Have a great day :)"
+            puts "                Have a great day!".yellow
+            puts "_________________________________________________".blue
             puts " "
             exit
 
