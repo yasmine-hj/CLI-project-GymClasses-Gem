@@ -22,7 +22,7 @@ class Scraper
     def self.scrape_individual_gymclass(gymclass)
         html = open(GYM_URL+gymclass.url)
         doc = Nokogiri::HTML(html)
-        gymclass.details = doc.css(".body-content").text.gsub("\n", '').gsub("\r", '').gsub("â\u0084¢", '').gsub("        ", '').gsub("      ", '')
+        gymclass.details = doc.css(".body-content").text.gsub("\n", '').gsub("\r", '').gsub("â\u0084¢", '').gsub("        ", '').gsub("      ", '').gsub(/(?!^)(?=[A-Z])/, ' ')
     end
 end
 
