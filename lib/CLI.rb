@@ -6,18 +6,20 @@ require 'colorize'
 class CLI
 
     def run
-        classes = []
         puts " "
         puts "_________________________________________________".blue
         puts " "
         puts "      Welcome to your gym classes database!".yellow
         puts "_________________________________________________".blue
         puts " "
-        puts "Which class would you like to learn more about?"
+        puts "Which class would you like to learn more about?".green
         puts " "
-        Scraper.scrape_gym
-        Gym_Classes.all.each.with_index(1) do |gymclass, i|
-        puts "#{i}"   ". " "#{gymclass.title}"
+
+            Scraper.scrape_gym
+
+            Gym_Classes.all.each.with_index(1) do |gymclass, i|
+            puts "#{i}"   ". " "#{gymclass.title}"
+
         end
         menu
         puts " "
@@ -27,7 +29,9 @@ class CLI
         puts " "
         puts "Please select a class to see class details.".green
         puts " "
+
         input = gets.chomp
+
         gymclass = Gym_Classes.all[input.to_i-1]
 
         if !gymclass
@@ -58,9 +62,9 @@ class CLI
         
         if input == "y"
             puts " "
-            Gym_Classes.all.each.with_index(1) do |gymclass, i|
-                puts "#{i}"   ". " "#{gymclass.title}"
-            end
+                Gym_Classes.all.each.with_index(1) do |gymclass, i|
+                    puts "#{i}"   ". " "#{gymclass.title}"
+                end
             menu
 
         elsif input == "n"

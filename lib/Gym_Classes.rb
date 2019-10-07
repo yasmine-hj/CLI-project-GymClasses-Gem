@@ -1,8 +1,10 @@
 class Gym_Classes
 
   attr_accessor :title, :url, :details
+    
     @@all = []
-  def initialize(title, url)
+  
+    def initialize(title, url)
     @title = title
     @url = url
     @@all << self
