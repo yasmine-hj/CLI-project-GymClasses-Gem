@@ -41,6 +41,11 @@ class CLI
             menu
             puts " "
 
+        elsif input=="random"
+            gymclass = Gym_Classes.all[rand(1..23)]
+            Scraper.scrape_individual_gymclass(gymclass)
+            puts  "#{gymclass.details}".yellow 
+
         else
             Scraper.scrape_individual_gymclass(gymclass)
             puts " "
